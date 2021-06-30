@@ -44,13 +44,13 @@ class ViewController: UIViewController {
             Block(Text(content: "Thanks for supporting", predefined: .alignment(.center))),
             .blank,
             
-            .text(.init(content: "THANK YOU", predefined: .bold, .alignment(.center))),
+            .text(.init(content: "THANK YOU", predefined: .light, .alignment(.center))),
             .blank(3),
             .qr("https://www.yuxiaor.com")
         )
         
-        ticket.feedLinesOnHead = 2
-        ticket.feedLinesOnTail = 3
+        ticket.feedLinesOnHead = 1
+        ticket.feedLinesOnTail = 1
         
         if bluetoothPrinterManager.canPrint {
             bluetoothPrinterManager.print(ticket)
@@ -62,6 +62,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+            vc.title = "Connect Bluetooth Printer"
+    
             vc.sectionTitle = "Choose Bluetooth Printer"
             vc.printerManager = bluetoothPrinterManager
         }

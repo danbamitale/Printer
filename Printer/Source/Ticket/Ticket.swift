@@ -10,7 +10,7 @@ import Foundation
 
 public struct Ticket {
     
-    public var feedLinesOnTail: UInt8 = 3
+    public var feedLinesOnTail: UInt8 = 1
     public var feedLinesOnHead: UInt8 = 0
     
     private var blocks = [Block]()

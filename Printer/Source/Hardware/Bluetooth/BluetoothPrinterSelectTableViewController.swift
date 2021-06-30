@@ -45,7 +45,7 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
 
         let printer = dataSource[indexPath.row]
 
-        cell.textLabel?.text = printer.name ?? "unknow"
+        cell.textLabel?.text = printer.name ?? "unknown"
         cell.accessoryType = printer.state == .connected ? .checkmark : .none
 
         if printer.isConnecting {
